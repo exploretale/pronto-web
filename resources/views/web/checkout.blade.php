@@ -72,8 +72,8 @@
 
         <div class="text-center my-3">
             <small class="text-muted"> Powered by </small>
-            <a href="https://www.unionbankph.com/" target="_blank">
-                <img class="img-fluid" src="{{ asset('images/ub-logo.png') }}" alt="Union Bank" style="max-width: 250px;">
+            <a class="d-block" href="https://www.unionbankph.com/" target="_blank">
+                <img class="img-fluid" src="{{ asset('images/ub-logo.png') }}" alt="Union Bank" style="max-width: 200px;">
             </a>
         </div>
     </div>
