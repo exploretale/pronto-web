@@ -44,7 +44,7 @@ class OrdersController extends ApiController
                 'grant_type' => "authorization_code",
                 "client_id" => config('unionbank.client_id'),
                 "code" => $data,
-                "redirect_uri" => ""
+                "redirect_uri" => UnionBank::getRedirectUrl()
             ],
             'allow_redirects' => false
         ])->getBody());
