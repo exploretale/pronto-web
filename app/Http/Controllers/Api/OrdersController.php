@@ -42,7 +42,7 @@ class OrdersController extends ApiController
         $response = json_decode(UnionBank::getHttpClient()->request('POST', 'sb/convergent/v1/oauth2/token', [
             'form_params' => [
                 'grant_type' => "authorization_code",
-                "client_id" => config('UNIONBANK_CLIENT_ID'),
+                "client_id" => config('unionbank.client_id'),
                 "code" => $data,
                 "redirect_uri" => ""
             ],
@@ -61,8 +61,8 @@ class OrdersController extends ApiController
         $response = json_decode(UnionBank::getHttpClient()->request('POST', 'sb/merchants/v1/payments/single', [
 
             "authorization" => "Bearer " . $accessToken,
-            "x-ibm-client-id" => config('UNIONBANK_CLIENT_ID'),
-            "x-ibm-client-secret" => config('UNIONBNK_CLIENT_SECRET'),
+            "x-ibm-client-id" => config('unionbank.client_id'),
+            "x-ibm-client-secret" => config('unionbank.client_secret'),
             "x-merchant-id" => "2c27bb1b-c55b-4c6c-ad63-8ac62501a8a1",
             'content-type' => "application/json",
             "accept" => "application/json",
