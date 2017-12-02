@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
 
+    const STATUS_PENDING = 'PENDING';
+    const STATUS_ACTIVE = 'status active';
+
+    protected $fillable = [
+        'merchant_id',
+        'status',
+    ];
+
     public function merchant()
     {
         return $this->belongsTo(Merchant::class);
@@ -15,5 +23,10 @@ class Order extends Model
     public function items()
     {
         return $this->hasMany(Item::class);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('status', self::STATUS_PENDING);
     }
 }
