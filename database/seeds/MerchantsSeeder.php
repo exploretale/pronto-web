@@ -16,12 +16,12 @@ class MerchantsSeeder extends Seeder
         $merchants = [
             // Mister Donut
             [
-                'zomato_id' => 6315990,
-                'email' => 'misterdonut@mail.com',
-                'name' => 'Mister Donut',
-                'url' => 'https://www.zomato.com/manila/mister-donut-1-tondo-manila?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1',
-                'image' => 'https://b.zmtcdn.com/data/res_imagery/6301037_CHAIN_ad2318701b5f06f0117dbde57671d5fb.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A',
-                'address' => 'Ground Floor, Tutuban Center Mall, Tondo, Manila',
+                'zomato_id' => 6317166,
+                'email' => 'dunkindonuts@mail.com',
+                'name' => 'Dunkin’ Donuts',
+                'url' => 'https://www.zomato.com/manila/dunkin-donuts-quiapo-manila?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1',
+                'image' => 'https://b.zmtcdn.com/data/res_imagery/6300388_CHAIN_0f7d4cc57913c8fd73b5d4e4cc021dc7.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A',
+                'address' => 'Second Floor, Isetann Mall, C. M. Recto Avenue, Quiapo, Manila',
                 'products' => [
                     [
                         'name' => 'Classic 12',

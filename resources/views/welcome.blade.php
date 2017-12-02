@@ -70,20 +70,20 @@
                 <div class="title m-b-xs">
                     {{ config('app.name') }}
                 </div>
-                <div class="text-center m-b-md">
-                    <em>Merchant Login</em>
-                </div>
+                {{--<div class="text-center m-b-md">--}}
+                    {{--<em>Merchant Login</em>--}}
+                {{--</div>--}}
 
 
-                <div class="links">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ route('home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-                        @endauth
-                    @endif
-                </div>
+                {{--<div class="links">--}}
+                    {{--@if (Route::has('login'))--}}
+                        {{--@auth--}}
+                            {{--<a href="{{ route('home') }}">Home</a>--}}
+                        {{--@else--}}
+                            {{--<a href="{{ route('login') }}">Login</a>--}}
+                        {{--@endauth--}}
+                    {{--@endif--}}
+                {{--</div>--}}
             </div>
         </div>
     </body>
