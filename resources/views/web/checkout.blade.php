@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="font-weight-bold">Checkout</h3>
+                <h5 class="font-weight-bold">Checkout</h5>
                 <hr>
                 <p>
                     Please review your order before proceeding.
@@ -12,9 +12,9 @@
                 <div class="text-center">
                     <img src="{{ $order->merchant->image }}" alt="{{ $order->merchant->name }}" class="img-responsive mb-3" style="max-width: 120px">
                 </div>
-                <h4 class="mb-3">
+                <h3 class="mb-3 font-weight-bold">
                     {{ $order->merchant->name }}
-                </h4>
+                </h3>
 
                 <table class="table table-bordered table-condensed">
                     <thead>
@@ -57,7 +57,7 @@
                 </table>
                 <form action="">
                     {{ csrf_field() }}
-                    <a href="{{ $redirectUrl }}" class="btn btn-primary">
+                    <a href="{{ $redirectUrl }}" class="btn btn-primary" style="border-color: white">
                         Confirm
                     </a>
                     <button class="btn">
@@ -65,7 +65,7 @@
                     </button>
                 </form>
                 <p class="text-muted mt-2">
-                    * Clicking "Confirm" will redirect you to the UnionBank Account Login.
+                    *By clicking "Confirm" button, you will be redirected to the UnionBank Account Login.
                 </p>
             </div>
         </div>
