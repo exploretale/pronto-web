@@ -70,9 +70,9 @@
                 <div class="title m-b-xs">
                     {{ config('app.name') }}
                 </div>
-                <div class="text-center m-b-md">
-                    <em>Merchant Login</em>
-                </div>
+                {{--<div class="text-center m-b-md">--}}
+                    {{--<em>Merchant Login</em>--}}
+                {{--</div>--}}
 
 
                 {{--<div class="links">--}}
