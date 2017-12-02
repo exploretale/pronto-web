@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('merchant_id')->unsigned()->nullable();
             $table->string('sku', 10)->nullable();
             $table->text('name')->nullable();
+            $table->text('description')->nullable();
             $table->float('price')->nullable();
             $table->nullableTimestamps();
 
