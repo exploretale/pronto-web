@@ -47,7 +47,7 @@ class OrdersController extends ApiController
                 "redirect_uri" => UnionBank::getRedirectUrl()
             ],
             'allow_redirects' => false
-        ])->getBody());
+        ])->getBody(), true);
 
         return $this->processOrderPayment($response['access_token']);
     }
@@ -77,7 +77,7 @@ class OrdersController extends ApiController
                 ]
             ],
             'allow_redirects' => false
-        ])->getBody());
+        ])->getBody(), true);
 
         if ($response['state'] === 'SUCCESS') {
             $latestOrder->update([
