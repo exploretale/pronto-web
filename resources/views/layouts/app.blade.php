@@ -17,15 +17,16 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top mb-4">
             <div class="container">
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <strong> {{ config('app.name', 'Laravel') }} </strong>
+                    <em style="font-size: 0.6em">Merchant Login</em>
+                </a>
+
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <strong> {{ config('app.name', 'Laravel') }} </strong>
-                        <em style="font-size: 0.6em">Merchant Login</em>
-                    </a>
 
+                <div class="collapse navbar-collapse" id="navbarToggle">
                     <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
                         <!-- Authentication Links -->
                         @guest

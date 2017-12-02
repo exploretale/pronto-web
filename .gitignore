@@ -20,6 +20,7 @@ Homestead.yaml
 Homestead.json
 .idea
 _ide_helper.php
+yarn-error.log
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
