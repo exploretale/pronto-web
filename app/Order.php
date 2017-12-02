@@ -11,4 +11,9 @@ class Order extends Model
     {
         return $this->belongsTo(Merchant::class);
     }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

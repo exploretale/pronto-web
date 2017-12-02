@@ -14,3 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('merchants', 'MerchantsController@index')->name('index');
+
+Route::post('orders', 'OrdersController@store');
+Route::get('orders/redirect', 'OrdersController@redirect');
