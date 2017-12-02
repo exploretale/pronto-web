@@ -18,9 +18,7 @@ class MerchantTransformer extends TransformerAbstract
             'name' => $model->name,
             'image' => $model->image,
             'url' => $model->url,
-            'address' => $model->address,
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at,
+            'address' => $model->address
         ];
     }
 
