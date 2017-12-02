@@ -14,6 +14,7 @@ class ProductTransformer extends TransformerAbstract
             'id' => (int)$model->id,
             'sku' => $model->sku,
             'name' => $model->name,
+            'image' => $model->image,
             'description' => $model->description,
             'price' => $model->price ? number_format($model->price, 2) : null
         ];
