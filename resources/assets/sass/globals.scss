@@ -1,0 +1,12 @@
+.btn-primary {
+  background-color: $brand-primary;
+}
+
+.bg-dark {
+  background-color: #f89d1d !important;
+
+  a:not(.navbar-brand) {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
