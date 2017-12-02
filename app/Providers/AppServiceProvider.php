@@ -4,6 +4,8 @@ namespace UHack\Pronto\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Schema;
+use UHack\Pronto\Observers\ProductCreateObserver;
+use UHack\Pronto\Product;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Product::observe(ProductCreateObserver::class);
         Schema::defaultStringLength(191);
     }
 

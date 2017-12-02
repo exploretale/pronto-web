@@ -15,8 +15,12 @@ class CreateMerchantsTable extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('zomato_id')->unsigned()->nullable();
+            $table->text('name')->nullable();
+            $table->text('image')->nullable();
+            $table->text('url')->nullable();
+            $table->text('address')->nullable();
             $table->nullableTimestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
