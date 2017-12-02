@@ -14,7 +14,7 @@ class MerchantTransformer extends TransformerAbstract
     public function transform(Merchant $model)
     {
         return [
-            'id' => (int)$model->zomato_id,
+            'id' => (string)$model->zomato_id,
             'name' => $model->name,
             'image' => $model->image,
             'url' => $model->url,
