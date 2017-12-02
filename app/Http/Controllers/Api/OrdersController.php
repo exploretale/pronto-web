@@ -83,7 +83,7 @@ class OrdersController extends ApiController
 
         if ($response['state'] === 'SUCCESS') {
             $latestOrder->update([
-                'status' => Order::STATUS_ACTIVE
+                'status' => Order::STATUS_SUCCESS
             ]);
             return response()->json([
                 'success' => 'Successfully paid for order!'

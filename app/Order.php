@@ -8,7 +8,7 @@ class Order extends Model
 {
 
     const STATUS_PENDING = 'PENDING';
-    const STATUS_ACTIVE = 'status active';
+    const STATUS_SUCCESS = 'SUCCESS';
 
     protected $fillable = [
         'merchant_id',
