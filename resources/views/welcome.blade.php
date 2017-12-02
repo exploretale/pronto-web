@@ -75,15 +75,15 @@
                 </div>
 
 
-                <div class="links">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ route('home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-                        @endauth
-                    @endif
-                </div>
+                {{--<div class="links">--}}
+                    {{--@if (Route::has('login'))--}}
+                        {{--@auth--}}
+                            {{--<a href="{{ route('home') }}">Home</a>--}}
+                        {{--@else--}}
+                            {{--<a href="{{ route('login') }}">Login</a>--}}
+                        {{--@endauth--}}
+                    {{--@endif--}}
+                {{--</div>--}}
             </div>
         </div>
     </body>
