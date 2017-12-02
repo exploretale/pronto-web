@@ -1,9 +1,9 @@
 .btn-primary {
-  background-color: $brand-primary;
+  background-color: #f89d1d !important;
 }
 
 .bg-dark {
-  background-color: #f89d1d !important;
+  background-color: $brand-primary !important;
 
   a:not(.navbar-brand) {
     color: #fff;

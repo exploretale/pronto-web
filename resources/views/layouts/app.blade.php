@@ -18,6 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top mb-4">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('images/pronto-icon.png') }}" class="img-responsive mr-2" style="width: 35px;" alt="Pronto">
                     <strong> {{ config('app.name', 'Laravel') }} </strong>
                     <em style="font-size: 0.6em"></em>
                 </a>
