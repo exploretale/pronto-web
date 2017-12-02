@@ -19,31 +19,8 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <strong> {{ config('app.name', 'Laravel') }} </strong>
-                    <em style="font-size: 0.6em">Merchant Login</em>
+                    <em style="font-size: 0.6em"></em>
                 </a>
-
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                        @else
-                            <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
             </div>
         </nav>
 
