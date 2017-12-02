@@ -59,13 +59,15 @@ class OrdersController extends ApiController
         $amount = $item->product->price * $item->quantity;
 
         $response = json_decode(UnionBank::getHttpClient()->request('POST', 'sb/merchants/v1/payments/single', [
+            'headers' => [
+                "authorization" => "Bearer " . $accessToken,
+                "x-ibm-client-id" => config('unionbank.client_id'),
+                "x-ibm-client-secret" => config('unionbank.client_secret'),
+                "x-merchant-id" => "2c27bb1b-c55b-4c6c-ad63-8ac62501a8a1",
+                'content-type' => "application/json",
+                "accept" => "application/json",
+            ],
 
-            "authorization" => "Bearer " . $accessToken,
-            "x-ibm-client-id" => config('unionbank.client_id'),
-            "x-ibm-client-secret" => config('unionbank.client_secret'),
-            "x-merchant-id" => "2c27bb1b-c55b-4c6c-ad63-8ac62501a8a1",
-            'content-type' => "application/json",
-            "accept" => "application/json",
             'json' => [
                 "senderPaymentId" => "$latestOrder->id",
                 "paymentRequestDate" => "2017-10-10T12:11:50Z",
