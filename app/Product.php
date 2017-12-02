@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
+    protected $fillable = [
+        'merchant_id',
+        'sku',
+        'name',
+        'description',
+        'price',
+    ];
+
     public function merchant()
     {
         return $this->belongsTo(Merchant::class);
