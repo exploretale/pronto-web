@@ -38,7 +38,6 @@ class OrdersController extends ApiController
 
     public function redirect(Request $request)
     {
-
         $data = $request->get('code');
         $client = new Client([
             // Base URI is used with relative requests
@@ -56,9 +55,7 @@ class OrdersController extends ApiController
             'allow_redirects' => false
         ])->getBody());
 
-        $this->processOrderPayment($response['access_token']);
-
-        
+        return $this->processOrderPayment($response['access_token']);
     }
 
     private function processOrderPayment($accessToken)
@@ -71,6 +68,8 @@ class OrdersController extends ApiController
 
         ]);
 
+        $item = $latestOrder->items()->first();
+        $amount = $item->product->price * $item->quantity;
 
         $response = json_decode($client->request('POST', 'sb/merchants/v1/payments/single', [
 
@@ -81,11 +80,13 @@ class OrdersController extends ApiController
             'content-type' => "application/json",
             "accept" => "application/json",
             'json' => [
-                "senderPaymentId" => $latestOrder->id,
+                "senderPaymentId" => "$latestOrder->id",
                 "paymentRequestDate" => "2017-10-10T12:11:50Z",
+                'remarks' => 'Pronto food ordering',
+
                 "amount" => [
                     "currency" => "PHP",
-                    "value" => "100",
+                    "value" => "$amount",
                 ]
             ],
             'allow_redirects' => false
@@ -94,6 +95,14 @@ class OrdersController extends ApiController
         if ($response['state'] === 'SUCCESS') {
             $latestOrder->update([
                 'status' => Order::STATUS_ACTIVE
+            ]);
+            return response()->json([
+                'success' => 'Successfully paid for order!'
+            ]);
+        } else {
+
+            return response()->json([
+                'success' => 'An error has occurred'
             ]);
         }
     }
