@@ -18,7 +18,8 @@ class MerchantTransformer extends TransformerAbstract
             'name' => $model->name,
             'image' => $model->image,
             'url' => $model->url,
-            'address' => $model->address
+            'address' => $model->address,
+            'is_pronto_merchant' => true
         ];
     }
 
