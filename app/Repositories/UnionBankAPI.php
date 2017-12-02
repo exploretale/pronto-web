@@ -23,7 +23,7 @@ class UnionBankAPI
         $this->redirectUrl = $config['redirect_url'] ?? null;
 
         $this->client = new GuzzleClient([
-            'base_url' => $this->baseUrl,
+            'base_uri' => $this->baseUrl,
             'client_id' => $this->clientId
         ]);
     }
