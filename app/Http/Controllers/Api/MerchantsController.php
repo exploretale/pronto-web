@@ -1,11 +1,12 @@
 <?php
 
-namespace UHack\Pronto\Http\Controllers;
+namespace UHack\Pronto\Http\Controllers\Api;
 
+use UHack\Pronto\Http\Controllers\ApiController;
 use UHack\Pronto\Http\Transformers\MerchantTransformer;
 use UHack\Pronto\Merchant;
 
-class MerchantController extends ApiController
+class MerchantsController extends ApiController
 {
 
     public function index()
