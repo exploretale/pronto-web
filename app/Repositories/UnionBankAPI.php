@@ -6,7 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 
 class UnionBankAPI
 {
-    protected $baseUrl = 'https://api-uat.unionbankph.com/partners/sb/convergent/v1/oauth2';
+    protected $baseUrl = 'https://api-uat.unionbankph.com/partners/';
 
     protected $client;
 
@@ -19,8 +19,8 @@ class UnionBankAPI
     public function __construct($config = [])
     {
         $this->clientId = $config['client_id'] ?? null;
-        $this->clientSecret  = $config['client_secret'] ?? null;
-        $this->redirectUrl  = $config['redirect_url'] ?? null;
+        $this->clientSecret = $config['client_secret'] ?? null;
+        $this->redirectUrl = $config['redirect_url'] ?? null;
 
         $this->client = new GuzzleClient([
             'base_url' => $this->baseUrl,
@@ -43,6 +43,11 @@ class UnionBankAPI
         return $this->redirectUrl;
     }
 
+    public function getHttpClient()
+    {
+        return $this->client;
+    }
+
     /**
      * Return Authorization URL for generating access token
      *
@@ -60,7 +65,7 @@ class UnionBankAPI
             'redirect_url' => $this->getRedirectUrl(),
         ]);
 
-        return "{$this->baseUrl}/authorize?{$queryParams}";
+        return "{$this->baseUrl}sb/convergent/v1/oauth2/authorize?{$queryParams}";
     }
 
 }

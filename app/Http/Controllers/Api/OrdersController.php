@@ -9,6 +9,7 @@ use UHack\Pronto\Http\Controllers\ApiController;
 use UHack\Pronto\Http\Transformers\OrderTransformer;
 use UHack\Pronto\Order;
 use GuzzleHttp\Client;
+use UnionBank;
 
 class OrdersController extends ApiController
 {
@@ -29,9 +30,8 @@ class OrdersController extends ApiController
         $order->items()->create($itemData);
 
 
-        return response()->withArray([
-            'checkout_url' => ""
-
+        return response()->json([
+            'checkout_url' => route('checkout', $order)
         ]);
     }
 
@@ -39,13 +39,7 @@ class OrdersController extends ApiController
     public function redirect(Request $request)
     {
         $data = $request->get('code');
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'https://api-uat.unionbankph.com/partners/',
-
-        ]);
-
-        $response = json_decode($client->request('POST', 'sb/convergent/v1/oauth2/token', [
+        $response = json_decode(UnionBank::getHttpClient()->request('POST', 'sb/convergent/v1/oauth2/token', [
             'form_params' => [
                 'grant_type' => "authorization_code",
                 "client_id" => config('UNIONBANK_CLIENT_ID'),
@@ -61,17 +55,10 @@ class OrdersController extends ApiController
     private function processOrderPayment($accessToken)
     {
         $latestOrder = Order::pending()->latest()->first();
-
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'https://api-uat.unionbankph.com/partners/',
-
-        ]);
-
         $item = $latestOrder->items()->first();
         $amount = $item->product->price * $item->quantity;
 
-        $response = json_decode($client->request('POST', 'sb/merchants/v1/payments/single', [
+        $response = json_decode(UnionBank::getHttpClient()->request('POST', 'sb/merchants/v1/payments/single', [
 
             "authorization" => "Bearer " . $accessToken,
             "x-ibm-client-id" => config('UNIONBANK_CLIENT_ID'),

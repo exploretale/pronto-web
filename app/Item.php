@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
+    protected $fillable = [
+        'quantity',
+        'product_id'
+    ];
 
     public function order()
     {
