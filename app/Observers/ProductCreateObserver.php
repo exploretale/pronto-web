@@ -9,7 +9,18 @@ class ProductCreateObserver
 
     public function creating(Product $product)
     {
-        $product->sku = substr(uniqid('PRNT-'), 0, 15);
+        $product->sku = "PRNT-{$this->generateSKU()}";
+    }
+
+    private function generateSKU()
+    {
+        do {
+            $salt = sha1(time() . mt_rand());
+            $newKey = substr($salt, 0, 10);
+        }
+        while (Product::where('sku', $newKey)->count());
+
+        return $newKey;
     }
 
 }
