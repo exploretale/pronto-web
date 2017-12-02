@@ -25,16 +25,19 @@ class MerchantsSeeder extends Seeder
                 'products' => [
                     [
                         'name' => 'Classic 12',
+                        'image' => 'https://i.imgur.com/4ewYv4F.jpg',
                         'description' => '6 Choco Cakes + 6 Bavarians',
                         'price' => 165.00,
                     ],
                     [
                         'name' => 'All Bavarian 12',
+                        'image' => 'https://i.imgur.com/pz8ePyI.jpg',
                         'description' => '6 Bavarians + 6 Bavarian Doubles',
                         'price' => 185.00,
                     ],
                     [
                         'name' => 'All-Time Favorite 15',
+                        'image' => 'https://i.imgur.com/JrCUFde.jpg',
                         'description' => '5 Choco Cakes + 5 Bavarians + 5 Bavarian Doubles',
                         'price' => 210.00,
                     ],
@@ -52,41 +55,49 @@ class MerchantsSeeder extends Seeder
                 'products' => [
                     [
                         'name' => 'Personal 6" Pan Pizza',
+                        'image' => '',
                         'description' => '6" Pan Pizza - Favorite',
                         'price' => 89.00,
                     ],
                     [
                         'name' => 'Regular 9" Pan Pizza',
+                        'image' => '',
                         'description' => '9" Pan Pizza - Favorite',
                         'price' => 219.00,
                     ],
                     [
                         'name' => 'Regular 9" Stuffed Crust',
+                        'image' => '',
                         'description' => '9" Stuffed Crust - Favorite',
                         'price' => 329.00,
                     ],
                     [
                         'name' => 'Regular 9" Hand Stretched',
+                        'image' => '',
                         'description' => '9" Hand Stretched - Favorite',
                         'price' => 219.00,
                     ],
                     [
                         'name' => 'Large 12" Pan Pizza',
+                        'image' => '',
                         'description' => '12" Pan Pizza - Favorite',
                         'price' => 389.00,
                     ],
                     [
                         'name' => 'Large 12" Stuffed Crust',
+                        'image' => '',
                         'description' => '12" Stuffed Crust - Favorite',
                         'price' => 539.00,
                     ],
                     [
                         'name' => 'Large 12" Hand Stretched',
+                        'image' => '',
                         'description' => '12" Hand Stretched - Favorite',
                         'price' => 389.00,
                     ],
                     [
                         'name' => 'Extra Large 18" Hand Stretched',
+                        'image' => '',
                         'description' => '18" Hand Stretched - Favorite',
                         'price' => 549.00,
                     ],
@@ -104,30 +115,37 @@ class MerchantsSeeder extends Seeder
                 'products' => [
                     [
                         'name' => 'Vietnamese Garlic Spaghetti',
+                        'image' => 'https://i.imgur.com/rlGDj3z.jpg',
                         'price' => 98.00,
                     ],
                     [
                         'name' => 'Vietnamese Garlic Spaghetti with Shrimps',
+                        'image' => 'https://i.imgur.com/E39NplP.jpg',
                         'price' => 165.00,
                     ],
                     [
                         'name' => 'Pasta Negra',
+                        'image' => 'https://i.imgur.com/rlGDj3z.jpg',
                         'price' => 190.00,
                     ],
                     [
                         'name' => 'Pesto',
+                        'image' => 'https://i.imgur.com/E39NplP.jpg',
                         'price' => 150.00,
                     ],
                     [
                         'name' => 'Pesto with Grilled Chicken',
+                        'image' => 'https://i.imgur.com/w1hQw33.jpg',
                         'price' => 195.00,
                     ],
                     [
                         'name' => 'Classic Lasagna',
+                        'image' => 'https://i.imgur.com/E39NplP.jpg',
                         'price' => 190.00,
                     ],
                     [
                         'name' => 'Penne with Grilled Chicken Inasal',
+                        'image' => 'https://i.imgur.com/w1hQw33.jpg',
                         'price' => 190.00,
                     ],
                 ]
